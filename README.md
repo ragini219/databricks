@@ -28,11 +28,7 @@ Each dataset is stored as Parquet files in a dedicated container/path.
 
 Reads Parquet files from Azure Blob Storage using Databricks.
 Uses a single notebook with a foreach loop to process multiple source datasets.
-Basic data exploration and profiling performed:
-    
-    * Schema inspection
-    * Null checks    
-    * Record counts
+Basic data exploration and profiling performed, schema inspection and record counts.
 
 Data is written to the Bronze layer in Data Lake.
 
@@ -47,8 +43,8 @@ Converts Parquet → Delta format for efficient downstream processing.
 
 Applies Slowly Changing Dimensions (SCD) logic:
 Customers: SCD Type 1 (overwrite updates)
-Products: SCD Type 2 (historical tracking with valid_from/valid_to) using Delta Live Tables
-Creates Fact_Orders table by joining the Silver Delta tables.
+Products: SCD Type 2 (historical tracking) using Delta Live Tables
+Creates Order (Fact) table by joining the Silver Delta tables.
 
 <img width="1918" height="913" alt="image" src="https://github.com/user-attachments/assets/67156f9d-1c92-416b-b1f9-23712bb37b35" />
 

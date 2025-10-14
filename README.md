@@ -22,6 +22,11 @@ Each dataset is stored as Parquet files in a dedicated container/path.
 | **Silver** | Cleansed and conformed data. Includes business transformations and deduplication. | Delta   |
 | **Gold**   | Curated, analytics-ready data models (e.g., SCDs and fact tables).                | Delta   |
 
+**Architecture**
+
+![Uploading Gemini_Generated_Image_421dph421dph421d.png…]()
+
+
 **Pipeline Flow**
 
 **Bronze Layer – Ingestion**

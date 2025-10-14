@@ -14,17 +14,10 @@ The following datasets are ingested from Azure Blob Storage:
 3. Orders
 4. Regions
 
-Each dataset is stored as Parquet files in a dedicated container/path.
-
-| Layer      | Purpose                                                                           | Format  |
-| ---------- | --------------------------------------------------------------------------------- | ------- |
-| **Bronze** | Raw ingestion layer. Loads data directly from source files.                       | Parquet |
-| **Silver** | Cleansed and conformed data. Includes business transformations and deduplication. | Delta   |
-| **Gold**   | Curated, analytics-ready data models (e.g., SCDs and fact tables).                | Delta   |
-
 **Architecture**
 
-![Uploading Gemini_Generated_Image_421dph421dph421d.png…]()
+<img width="1408" height="736" alt="image" src="https://github.com/user-attachments/assets/566c105c-f4d1-40be-8390-574ac49703a5" />
+
 
 
 **Pipeline Flow**
@@ -33,7 +26,7 @@ Each dataset is stored as Parquet files in a dedicated container/path.
 
 Reads Parquet files from Azure Blob Storage using Databricks.
 Uses a single notebook with a foreach loop to process multiple source datasets.
-Basic data exploration and profiling performed, schema inspection and record counts.
+Basic data exploration and profiling, perfor schema inspection and record counts.
 
 Data is written to the Bronze layer in Data Lake.
 
@@ -51,7 +44,6 @@ Customers: SCD Type 1 (overwrite updates)
 Products: SCD Type 2 (historical tracking) using Delta Live Tables
 Creates Order (Fact) table by joining the Silver Delta tables.
 
-<img width="1918" height="913" alt="image" src="https://github.com/user-attachments/assets/67156f9d-1c92-416b-b1f9-23712bb37b35" />
 
 
 <img width="1000" height="800" alt="image" src="https://github.com/user-attachments/assets/da9b19e0-3341-47c8-a80c-6093ae13a347" />

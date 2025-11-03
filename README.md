@@ -1,4 +1,4 @@
-**Azure Databricks Medallion Architecture – Parquet Data Pipeline**
+**Azure Databricks Medallion Architecture – Data Pipeline**
 
 **Overview**
 
